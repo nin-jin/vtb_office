@@ -1,0 +1,20 @@
+$vtb_office $mol_stack
+	sub /
+		<= Map $hyoo_map
+			Search null
+			Photo null
+			Draw null
+			Source null
+			center <= center $mol_vector_2d /
+				-3019489.046301195
+				7504015.489375884
+			zoom? <=> zoom? 140073.04979817825
+		<= Chrome $mol_page
+			head /
+				<= Logo $mol_image
+					uri \vtb/logo/logo.png
+				<= Title $mol_view
+					sub /
+						<= title \Ближайший банк там, где ты!
+		<= Self $mol_video_camera
+			transform \translate(-50%,-50%) scaleX(-1)
