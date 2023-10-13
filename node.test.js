@@ -9975,7 +9975,7 @@ var $;
                         content: `flex-start`,
                     },
                     padding: {
-                        right: `4rem`,
+                        right: `3.25rem`,
                     },
                 },
             },
