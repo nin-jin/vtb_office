@@ -19,6 +19,7 @@ namespace $.$$ {
 			justify: {
 				self: `stretch`,
 			},
+			pointerEvents: `none`,
 			Head: {
 				background: {
 					color: `#002882`,
