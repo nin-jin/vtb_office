@@ -2734,12 +2734,12 @@ declare namespace $ {
         center(next?: any): $mol_vector_2d<number>;
         zoom(next?: any): number;
         Map(): $$.$hyoo_map;
+        Self(): $$.$mol_video_camera;
+        Enter(): $mol_button_minor;
         Logo(): $$.$mol_image;
         title(): string;
         Title(): $mol_view;
         Chrome(): $mol_page;
-        Self(): $$.$mol_video_camera;
-        Enter(): $$.$mol_link;
     }
 }
 

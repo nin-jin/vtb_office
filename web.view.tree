@@ -713,6 +713,9 @@ $vtb_office $mol_stack
 				-3019489.046301195
 				7504015.489375884
 			zoom? <=> zoom? 140073.04979817825
+		<= Enter $mol_button_minor
+			sub /
+				<= Self $mol_video_camera
 		<= Chrome $mol_page
 			head /
 				<= Logo $mol_image
@@ -720,6 +723,3 @@ $vtb_office $mol_stack
 				<= Title $mol_view
 					sub /
 						<= title \Ближайший банк там, где ты!
-		<= Enter $mol_link
-			sub /
-				<= Self $mol_video_camera

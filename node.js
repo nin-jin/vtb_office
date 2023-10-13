@@ -9865,8 +9865,8 @@ var $;
         sub() {
             return [
                 this.Map(),
-                this.Chrome(),
-                this.Enter()
+                this.Enter(),
+                this.Chrome()
             ];
         }
         center(next) {
@@ -9888,6 +9888,17 @@ var $;
             obj.Source = () => null;
             obj.center = (next) => this.center(next);
             obj.zoom = (next) => this.zoom(next);
+            return obj;
+        }
+        Self() {
+            const obj = new this.$.$mol_video_camera();
+            return obj;
+        }
+        Enter() {
+            const obj = new this.$.$mol_button_minor();
+            obj.sub = () => [
+                this.Self()
+            ];
             return obj;
         }
         Logo() {
@@ -9913,17 +9924,6 @@ var $;
             ];
             return obj;
         }
-        Self() {
-            const obj = new this.$.$mol_video_camera();
-            return obj;
-        }
-        Enter() {
-            const obj = new this.$.$mol_link();
-            obj.sub = () => [
-                this.Self()
-            ];
-            return obj;
-        }
     }
     __decorate([
         $mol_mem
@@ -9936,6 +9936,12 @@ var $;
     ], $vtb_office.prototype, "Map", null);
     __decorate([
         $mol_mem
+    ], $vtb_office.prototype, "Self", null);
+    __decorate([
+        $mol_mem
+    ], $vtb_office.prototype, "Enter", null);
+    __decorate([
+        $mol_mem
     ], $vtb_office.prototype, "Logo", null);
     __decorate([
         $mol_mem
@@ -9943,12 +9949,6 @@ var $;
     __decorate([
         $mol_mem
     ], $vtb_office.prototype, "Chrome", null);
-    __decorate([
-        $mol_mem
-    ], $vtb_office.prototype, "Self", null);
-    __decorate([
-        $mol_mem
-    ], $vtb_office.prototype, "Enter", null);
     $.$vtb_office = $vtb_office;
 })($ || ($ = {}));
 //vtb/office/-view.tree/office.view.tree.ts
@@ -10008,28 +10008,36 @@ var $;
                 padding: 0,
                 border: {
                     radius: `50%`,
-                    style: `solid`,
-                    width: `1vmin`,
-                    color: `#002882`,
+                },
+                box: {
+                    shadow: [{
+                            x: 0,
+                            y: 0,
+                            blur: 0,
+                            spread: `1vmin`,
+                            color: `#002882`,
+                        }]
+                },
+                ':focus': {
+                    border: {
+                        radius: 0,
+                    },
+                    $mol_view: {
+                        width: `100vw`,
+                        height: `100vh`,
+                    },
                 },
             },
             Self: {
                 width: `25vmin`,
                 height: `25vmin`,
+                objectFit: `cover`,
                 '@': {
                     mol_view_error: {
                         NotAllowedError: {
                             visibility: `hidden`,
                         },
                     },
-                },
-                ':hover': {
-                    width: `30vmin`,
-                    height: `30vmin`,
-                },
-                ':active': {
-                    width: `35vmin`,
-                    height: `35vmin`,
                 },
             },
         });
