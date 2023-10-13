@@ -46,19 +46,39 @@ namespace $.$$ {
 			margin: `auto`,
 		},
 		
-		Self: {
+		Enter: {
+			transform: `translate(-50%,-50%)`,
+			position: `absolute`,
+			left: `50%`,
+			top: `50%`,
+			overflow: `hidden`,
+			padding: 0,
 			border: {
 				radius: `50%`,
 				style: `solid`,
 				width: `1vmin`,
 				color: `#002882`,
 			},
-			transform: `translate(-50%,-50%) scaleX(-1)`,
-			position: `absolute`,
+		},
+		
+		Self: {
 			width: `25vmin`,
 			height: `25vmin`,
-			left: `50%`,
-			top: `50%`,
+			'@': {
+				mol_view_error: {
+					NotAllowedError: {
+						visibility: `hidden`,
+					},
+				},
+			},
+			':hover': {
+				width: `30vmin`,
+				height: `30vmin`,
+			},
+			':active': {
+				width: `35vmin`,
+				height: `35vmin`,
+			},
 		},
 		
 	} )
