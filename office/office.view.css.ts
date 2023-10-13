@@ -2,6 +2,10 @@ namespace $.$$ {
 	
 	$mol_style_define( $vtb_office, {
 		
+		font: {
+			family: `Arial`,
+		},
+		
 		Map: {
 			align: {
 				self: `stretch`,
@@ -51,8 +55,8 @@ namespace $.$$ {
 			},
 			transform: `translate(-50%,-50%) scaleX(-1)`,
 			position: `absolute`,
-			width: `20vmin`,
-			height: `20vmin`,
+			width: `25vmin`,
+			height: `25vmin`,
 			left: `50%`,
 			top: `50%`,
 		},
