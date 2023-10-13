@@ -56,15 +56,31 @@ namespace $.$$ {
 			padding: 0,
 			border: {
 				radius: `50%`,
-				style: `solid`,
-				width: `1vmin`,
-				color: `#002882`,
+			},
+			box: {
+				shadow: [{
+					x: 0,
+					y: 0,
+					blur: 0,
+					spread: `1vmin`,
+					color: `#002882`,
+				}]
+			},
+			':focus': {
+				border: {
+					radius: 0,
+				},
+				$mol_view: {
+					width: `100vw`,
+					height: `100vh`,
+				},
 			},
 		},
 		
 		Self: {
 			width: `25vmin`,
 			height: `25vmin`,
+			objectFit: `cover`,
 			'@': {
 				mol_view_error: {
 					NotAllowedError: {
@@ -72,14 +88,10 @@ namespace $.$$ {
 					},
 				},
 			},
-			':hover': {
-				width: `30vmin`,
-				height: `30vmin`,
-			},
-			':active': {
-				width: `35vmin`,
-				height: `35vmin`,
-			},
+			// ':hover': {
+			// 	width: `30vmin`,
+			// 	height: `30vmin`,
+			// },
 		},
 		
 	} )
