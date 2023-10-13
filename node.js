@@ -9983,13 +9983,13 @@ var $;
                         content: `flex-start`,
                     },
                     padding: {
-                        right: `3.5rem`,
+                        right: `4rem`,
                     },
                 },
             },
             Logo: {
                 height: `2.5rem`,
-                width: `3.5rem`,
+                width: `3.25rem`,
             },
             Title: {
                 padding: $mol_gap.text,
