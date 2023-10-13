@@ -9858,7 +9858,7 @@ var $;
             return [
                 this.Map(),
                 this.Chrome(),
-                this.Self()
+                this.Enter()
             ];
         }
         center() {
@@ -9905,7 +9905,13 @@ var $;
         }
         Self() {
             const obj = new this.$.$mol_video_camera();
-            obj.transform = () => "translate(-50%,-50%) scaleX(-1)";
+            return obj;
+        }
+        Enter() {
+            const obj = new this.$.$mol_link();
+            obj.sub = () => [
+                this.Self()
+            ];
             return obj;
         }
     }
@@ -9930,6 +9936,9 @@ var $;
     __decorate([
         $mol_mem
     ], $vtb_office.prototype, "Self", null);
+    __decorate([
+        $mol_mem
+    ], $vtb_office.prototype, "Enter", null);
     $.$vtb_office = $vtb_office;
 })($ || ($ = {}));
 //vtb/office/-view.tree/office.view.tree.ts
@@ -9940,6 +9949,9 @@ var $;
     var $$;
     (function ($$) {
         $mol_style_define($vtb_office, {
+            font: {
+                family: `Arial`,
+            },
             Map: {
                 align: {
                     self: `stretch`,
@@ -9976,19 +9988,38 @@ var $;
                 color: `white`,
                 margin: `auto`,
             },
-            Self: {
+            Enter: {
+                transform: `translate(-50%,-50%)`,
+                position: `absolute`,
+                left: `50%`,
+                top: `50%`,
+                overflow: `hidden`,
+                padding: 0,
                 border: {
                     radius: `50%`,
                     style: `solid`,
                     width: `1vmin`,
                     color: `#002882`,
                 },
-                transform: `translate(-50%,-50%) scaleX(-1)`,
-                position: `absolute`,
-                width: `20vmin`,
-                height: `20vmin`,
-                left: `50%`,
-                top: `50%`,
+            },
+            Self: {
+                width: `25vmin`,
+                height: `25vmin`,
+                '@': {
+                    mol_view_error: {
+                        NotAllowedError: {
+                            visibility: `hidden`,
+                        },
+                    },
+                },
+                ':hover': {
+                    width: `30vmin`,
+                    height: `30vmin`,
+                },
+                ':active': {
+                    width: `35vmin`,
+                    height: `35vmin`,
+                },
             },
         });
     })($$ = $.$$ || ($.$$ = {}));

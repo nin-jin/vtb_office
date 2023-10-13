@@ -720,5 +720,6 @@ $vtb_office $mol_stack
 				<= Title $mol_view
 					sub /
 						<= title \Ближайший банк там, где ты!
-		<= Self $mol_video_camera
-			transform \translate(-50%,-50%) scaleX(-1)
+		<= Enter $mol_link
+			sub /
+				<= Self $mol_video_camera
