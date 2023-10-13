@@ -9861,7 +9861,9 @@ var $;
                 this.Enter()
             ];
         }
-        center() {
+        center(next) {
+            if (next !== undefined)
+                return next;
             const obj = new this.$.$mol_vector_2d(-3019489.046301195, 7504015.489375884);
             return obj;
         }
@@ -9876,7 +9878,7 @@ var $;
             obj.Photo = () => null;
             obj.Draw = () => null;
             obj.Source = () => null;
-            obj.center = () => this.center();
+            obj.center = (next) => this.center(next);
             obj.zoom = (next) => this.zoom(next);
             return obj;
         }
@@ -9964,6 +9966,7 @@ var $;
                 justify: {
                     self: `stretch`,
                 },
+                pointerEvents: `none`,
                 Head: {
                     background: {
                         color: `#002882`,

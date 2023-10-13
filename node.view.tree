@@ -709,7 +709,7 @@ $vtb_office $mol_stack
 			Photo null
 			Draw null
 			Source null
-			center <= center $mol_vector_2d /
+			center? <=> center? $mol_vector_2d /
 				-3019489.046301195
 				7504015.489375884
 			zoom? <=> zoom? 140073.04979817825

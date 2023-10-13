@@ -2731,7 +2731,7 @@ declare namespace $.$$ {
 declare namespace $ {
     class $vtb_office extends $mol_stack {
         sub(): readonly any[];
-        center(): $mol_vector_2d<number>;
+        center(next?: any): $mol_vector_2d<number>;
         zoom(next?: any): number;
         Map(): $$.$hyoo_map;
         Logo(): $$.$mol_image;
