@@ -1,1 +1,3 @@
 deploy \/vtb/logo/logo.png
+
+include \/mol/offline
