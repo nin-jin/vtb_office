@@ -18,5 +18,15 @@ namespace $.$$ {
 			)
 		}
 		
+		@ $mol_mem
+		zoom( next?: number ) {
+			return this.$.$mol_state_local.value( 'zoom', next ) ?? super.zoom()
+		}
+		
+		@ $mol_mem
+		center( next?: $mol_vector_2d< number > ) {
+			return new $mol_vector_2d( ... ( this.$.$mol_state_local.value( 'center', next ) as any as [ number, number ] ?? super.center() ) )
+		}
+		
 	}
 }
