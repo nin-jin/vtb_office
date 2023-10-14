@@ -9484,7 +9484,7 @@ var $;
                     return;
                 if (!this.geo_accuracy())
                     return;
-                this.Map().geo_jump(new $mol_vector_2d(this.geo_longitude(), this.geo_latitude()), this.geo_accuracy());
+                this.Map().geo_jump(new $mol_vector_2d(this.geo_longitude(), this.geo_latitude()), 8 * 6378136 / this.geo_accuracy());
             }
         }
         __decorate([
