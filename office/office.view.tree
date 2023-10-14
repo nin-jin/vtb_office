@@ -3,6 +3,7 @@ $vtb_office $mol_stack
 		latitude => geo_latitude
 		longitude => geo_longitude
 		accuracy => geo_accuracy
+		options * enableHighAccuracy false
 	sub /
 		<= Map $hyoo_map
 			Search null
