@@ -3053,7 +3053,7 @@ var $;
             return { enableHighAccuracy: this.accuracy_high() };
         }
         accuracy_high() {
-            return false;
+            return true;
         }
         watcher() {
             const id = this.$.$mol_dom_context.navigator.geolocation.watchPosition($mol_wire_async((val) => this.value(val)), $mol_wire_async((error) => this.error(error)), this.options());
