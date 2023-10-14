@@ -10057,10 +10057,22 @@ var $;
                     return;
                 this.Map().geo_jump(new $mol_vector_2d(this.geo_longitude(), this.geo_latitude()), 10_000_000 / this.geo_accuracy());
             }
+            zoom(next) {
+                return this.$.$mol_state_local.value('zoom', next) ?? super.zoom();
+            }
+            center(next) {
+                return new $mol_vector_2d(...(this.$.$mol_state_local.value('center', next) ?? super.center()));
+            }
         }
         __decorate([
             $mol_mem
         ], $vtb_office.prototype, "locate", null);
+        __decorate([
+            $mol_mem
+        ], $vtb_office.prototype, "zoom", null);
+        __decorate([
+            $mol_mem
+        ], $vtb_office.prototype, "center", null);
         $$.$vtb_office = $vtb_office;
     })($$ = $.$$ || ($.$$ = {}));
 })($ || ($ = {}));

@@ -2646,6 +2646,8 @@ declare namespace $.$$ {
     class $vtb_office extends $.$vtb_office {
         autorun(): never[];
         locate(): void;
+        zoom(next?: number): number;
+        center(next?: $mol_vector_2d<number>): $mol_vector_2d<number>;
     }
 }
 
