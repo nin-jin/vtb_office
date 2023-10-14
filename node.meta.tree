@@ -75,3 +75,4 @@
 	deploy \/hyoo/map/logo/logo.svg
 \/vtb/office
 	deploy \/vtb/logo/logo.png
+	include \/mol/offline
