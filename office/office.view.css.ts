@@ -88,10 +88,6 @@ namespace $.$$ {
 					},
 				},
 			},
-			// ':hover': {
-			// 	width: `30vmin`,
-			// 	height: `30vmin`,
-			// },
 		},
 		
 	} )
