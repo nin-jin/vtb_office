@@ -719,7 +719,9 @@ $vtb_office $mol_stack
 				0
 				0
 			zoom? <=> zoom? 1
-		<= Enter $mol_button_minor
+		<= Enter $mol_link
+			uri \https://www.vtb.ru/r/online/login
+			target \_self
 			sub /
 				<= Self $mol_video_camera
 		<= Chrome $mol_page

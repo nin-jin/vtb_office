@@ -2634,7 +2634,7 @@ declare namespace $ {
         zoom(next?: any): number;
         Map(): $$.$hyoo_map;
         Self(): $$.$mol_video_camera;
-        Enter(): $mol_button_minor;
+        Enter(): $$.$mol_link;
         Logo(): $$.$mol_image;
         title(): string;
         Title(): $mol_view;

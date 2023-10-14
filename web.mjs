@@ -9405,7 +9405,9 @@ var $;
             return obj;
         }
         Enter() {
-            const obj = new this.$.$mol_button_minor();
+            const obj = new this.$.$mol_link();
+            obj.uri = () => "https://www.vtb.ru/r/online/login";
+            obj.target = () => "_self";
             obj.sub = () => [
                 this.Self()
             ];
