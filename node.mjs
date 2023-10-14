@@ -3058,7 +3058,10 @@ var $;
 (function ($) {
     class $mol_geo_position extends $mol_object {
         options() {
-            return { enableHighAccuracy: true };
+            return { enableHighAccuracy: this.accuracy_high() };
+        }
+        accuracy_high() {
+            return false;
         }
         watcher() {
             const id = this.$.$mol_dom_context.navigator.geolocation.watchPosition($mol_wire_async((val) => this.value(val)), $mol_wire_async((error) => this.error(error)), this.options());

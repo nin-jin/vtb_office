@@ -947,6 +947,7 @@ declare namespace $ {
         options(): {
             enableHighAccuracy: boolean;
         };
+        accuracy_high(): boolean;
         watcher(): {
             destructor: () => void;
         };
