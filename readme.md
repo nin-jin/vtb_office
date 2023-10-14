@@ -1,6 +1,13 @@
 # ВТБ Офис
 
-Ближайшее отделение ВТБ всегда рядом
+Ближайшее отделение ВТБ всегда рядом!
+
+## Промо
+
+- [Статья](https://page.hyoo.ru/#!=848lqn_d8pkkj)
+- [Слайды онлайн](https://slides.hyoo.ru/#!slides=https%3A%2F%2Fpage.hyoo.ru%2F%23!%3D848lqn_d8pkkj%2F)
+- [Слайды в PDF](./slides.pdf)
+- [Видео тизер](https://youtu.be/Je_C0LNOaP0)
 
 ## Окружение разработчика
 
@@ -16,6 +23,7 @@
 - Приложение: $vtb_office лежит в [/vtb/office/](./office/)
 
 ## Зависимости
+
  - [$mol](https://mol.hyoo.ru) - наш микромодулный набор библиотек
  - [$hyoo_map](https://map.hyoo.ru) - наш картографический сервис
 
