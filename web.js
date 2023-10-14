@@ -8426,6 +8426,11 @@ var $;
                 photo: "https://server.arcgisonline.com/ArcGIS/rest/services/World_Imagery/MapServer/tile/{level}/{y}/{x}"
             };
         }
+        auto() {
+            return [
+                this.center_offset()
+            ];
+        }
         sub() {
             return [
                 this.Main()
@@ -8433,6 +8438,9 @@ var $;
         }
         theme() {
             return "$mol_theme_light";
+        }
+        center_offset() {
+            return null;
         }
         query(val) {
             if (val !== undefined)
