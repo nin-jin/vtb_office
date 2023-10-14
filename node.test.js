@@ -3048,6 +3048,62 @@ var $;
 "use strict";
 var $;
 (function ($) {
+    class $mol_geo_position extends $mol_object {
+        options() {
+            return { enableHighAccuracy: true };
+        }
+        watcher() {
+            const id = this.$.$mol_dom_context.navigator.geolocation.watchPosition($mol_wire_async((val) => this.value(val)), $mol_wire_async((error) => this.error(error)), this.options());
+            return { destructor: () => this.$.$mol_dom_context.navigator.geolocation.clearWatch(id) };
+        }
+        value(next) {
+            this.watcher();
+            return next ?? null;
+        }
+        error(next) {
+            return next ?? null;
+        }
+        accuracy() {
+            return this.value()?.coords?.accuracy;
+        }
+        altitude() {
+            return this.value()?.coords?.altitude;
+        }
+        altitudeAccuracy() {
+            return this.value()?.coords?.altitudeAccuracy;
+        }
+        heading() {
+            return this.value()?.coords?.heading;
+        }
+        latitude() {
+            return this.value()?.coords?.latitude;
+        }
+        longitude() {
+            return this.value()?.coords?.longitude;
+        }
+        speed() {
+            return this.value()?.coords?.speed;
+        }
+        timestamp() {
+            return this.value()?.timestamp;
+        }
+    }
+    __decorate([
+        $mol_mem
+    ], $mol_geo_position.prototype, "watcher", null);
+    __decorate([
+        $mol_mem
+    ], $mol_geo_position.prototype, "value", null);
+    __decorate([
+        $mol_mem
+    ], $mol_geo_position.prototype, "error", null);
+    $.$mol_geo_position = $mol_geo_position;
+})($ || ($ = {}));
+//mol/geo/position/position.ts
+;
+"use strict";
+var $;
+(function ($) {
     class $mol_vector extends Array {
         get length() {
             return super.length;
@@ -9459,6 +9515,10 @@ var $;
                 this.zoom(zoom);
                 this.center(center);
             }
+            geo_jump(coord, zoom = 1) {
+                this.zoom(zoom);
+                this.center(this.Pane().geo_to_tile(coord).multed0(-zoom).added1(this.center_offset()));
+            }
             draw_uri() {
                 return super.draw_uri()
                     .replace('{zoom}', this.$.$mol_state_arg.value('zoom') ?? '')
@@ -9486,6 +9546,9 @@ var $;
         __decorate([
             $mol_mem
         ], $hyoo_map.prototype, "zoom", null);
+        __decorate([
+            $mol_action
+        ], $hyoo_map.prototype, "geo_jump", null);
         __decorate([
             $mol_mem
         ], $hyoo_map.prototype, "draw_uri", null);
@@ -9854,6 +9917,19 @@ var $;
 var $;
 (function ($) {
     class $vtb_office extends $mol_stack {
+        geo_latitude() {
+            return this.Geo().latitude();
+        }
+        geo_longitude() {
+            return this.Geo().longitude();
+        }
+        geo_accuracy() {
+            return this.Geo().accuracy();
+        }
+        Geo() {
+            const obj = new this.$.$mol_geo_position();
+            return obj;
+        }
         sub() {
             return [
                 this.Map(),
@@ -9864,13 +9940,13 @@ var $;
         center(next) {
             if (next !== undefined)
                 return next;
-            const obj = new this.$.$mol_vector_2d(-3019489.046301195, 7504015.489375884);
+            const obj = new this.$.$mol_vector_2d(0, 0);
             return obj;
         }
         zoom(next) {
             if (next !== undefined)
                 return next;
-            return 140073.04979817825;
+            return 1;
         }
         Map() {
             const obj = new this.$.$hyoo_map();
@@ -9919,6 +9995,9 @@ var $;
     }
     __decorate([
         $mol_mem
+    ], $vtb_office.prototype, "Geo", null);
+    __decorate([
+        $mol_mem
     ], $vtb_office.prototype, "center", null);
     __decorate([
         $mol_mem
@@ -9944,6 +10023,35 @@ var $;
     $.$vtb_office = $vtb_office;
 })($ || ($ = {}));
 //vtb/office/-view.tree/office.view.tree.ts
+;
+"use strict";
+var $;
+(function ($) {
+    var $$;
+    (function ($$) {
+        class $vtb_office extends $.$vtb_office {
+            autorun() {
+                super.autorun();
+                this.locate();
+                return [];
+            }
+            locate() {
+                if (!this.geo_longitude())
+                    return;
+                if (!this.geo_latitude())
+                    return;
+                if (!this.geo_accuracy())
+                    return;
+                this.Map().geo_jump(new $mol_vector_2d(this.geo_longitude(), this.geo_latitude()), this.geo_accuracy());
+            }
+        }
+        __decorate([
+            $mol_mem
+        ], $vtb_office.prototype, "locate", null);
+        $$.$vtb_office = $vtb_office;
+    })($$ = $.$$ || ($.$$ = {}));
+})($ || ($ = {}));
+//vtb/office/office.view.ts
 ;
 "use strict";
 var $;

@@ -943,6 +943,27 @@ declare namespace $ {
 }
 
 declare namespace $ {
+    class $mol_geo_position extends $mol_object {
+        options(): {
+            enableHighAccuracy: boolean;
+        };
+        watcher(): {
+            destructor: () => void;
+        };
+        value(next?: GeolocationPosition): GeolocationPosition | null;
+        error(next?: GeolocationPositionError): GeolocationPositionError | null;
+        accuracy(): number | undefined;
+        altitude(): number | null | undefined;
+        altitudeAccuracy(): number | null | undefined;
+        heading(): number | null | undefined;
+        latitude(): number | undefined;
+        longitude(): number | undefined;
+        speed(): number | null | undefined;
+        timestamp(): number | undefined;
+    }
+}
+
+declare namespace $ {
     class $mol_vector<Value, Length extends number> extends Array<Value> {
         get length(): Length;
         constructor(...values: Value[] & {
@@ -2644,6 +2665,7 @@ declare namespace $.$$ {
         zoom_limit(): $mol_vector_range<number>;
         zoom(next?: number): number;
         search(): void;
+        geo_jump(coord: $mol_vector_2d<number>, zoom?: number): void;
         draw_uri(): string;
         tiles_uri(): any;
         theme(): "$mol_theme_light" | "$mol_theme_dark";
@@ -2730,6 +2752,10 @@ declare namespace $.$$ {
 
 declare namespace $ {
     class $vtb_office extends $mol_stack {
+        geo_latitude(): number | undefined;
+        geo_longitude(): number | undefined;
+        geo_accuracy(): number | undefined;
+        Geo(): $mol_geo_position;
         sub(): readonly any[];
         center(next?: any): $mol_vector_2d<number>;
         zoom(next?: any): number;
@@ -2740,6 +2766,13 @@ declare namespace $ {
         title(): string;
         Title(): $mol_view;
         Chrome(): $mol_page;
+    }
+}
+
+declare namespace $.$$ {
+    class $vtb_office extends $.$vtb_office {
+        autorun(): never[];
+        locate(): void;
     }
 }
 
